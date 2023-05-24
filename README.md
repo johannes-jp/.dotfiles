@@ -27,6 +27,7 @@ dot files, install scripts, and other turnkey tools
 ### packages
 - python3
 - python3-pip
+- github cli
 - jupyter
 - langchain
 - nodejs
