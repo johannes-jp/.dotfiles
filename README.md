@@ -9,7 +9,7 @@ dot files, install scripts, and other turnkey tools
 - install applications
 - consolidate history
 - push files
-- 
+
 ## VM
 - guest additions
 - machine settings
