@@ -4,6 +4,11 @@ dot files, install scripts, and other turnkey tools
 ## files
 - dot files
 - wallpapers
+- apt list
+- apt list (manual)
+- pip list
+- sources.list
+- sources.list.d
 
 ## scripts
 - install applications
