@@ -5,6 +5,11 @@ dot files, install scripts, and other turnkey tools
 - dot files
 - wallpapers
 
+## scripts
+- install applications
+-   install interface
+- push files
+- 
 ## VM
 - guest additions
 - machine settings
