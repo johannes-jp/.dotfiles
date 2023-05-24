@@ -7,7 +7,7 @@ dot files, install scripts, and other turnkey tools
 
 ## scripts
 - install applications
--   install interface
+- consolidate history
 - push files
 - 
 ## VM
