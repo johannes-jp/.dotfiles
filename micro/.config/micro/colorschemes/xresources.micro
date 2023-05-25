@@ -1,0 +1,45 @@
+#or just do this. jesus. so simple.
+	# start micro
+	# ctrl+e
+	# type “set colorscheme simple” without the “”
+	# quit micro
+
+
+
+# Micro editor Xresources color theme
+
+# Default
+color-link default "black,white"
+
+# Syntax highlighting
+color-link comment "green"
+color-link identifier "red"
+color-link constant "blue"
+color-link statement "yellow"
+color-link symbol "cyan"
+color-link preproc "brightblack"
+color-link type "brightred"
+color-link special "brightgreen"
+color-link underlined "brightyellow"
+color-link error "brightblue"
+color-link todo "brightmagenta"
+
+# UI components
+color-link selection "black,brightwhite"
+color-link statusline "black,white"
+color-link tabbar "black,white"
+color-link indent-char "white"
+color-link line-number "white"
+color-link gutter-error "brightred"
+color-link gutter-warning "yellow"
+color-link diff-added "green"
+color-link diff-modified "cyan"
+color-link diff-deleted "red"
+color-link cursor-line "black"
+color-link current-line-number "white"
+color-link color-column "black"
+color-link ignore "brightblack"
+color-link scrollbar "black"
+color-link divider "white"
+color-link message "white"
+color-link error-message "brightred"

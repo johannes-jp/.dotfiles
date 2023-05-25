@@ -1,0 +1,3 @@
+window:
+  class:
+    instance: 'timer'

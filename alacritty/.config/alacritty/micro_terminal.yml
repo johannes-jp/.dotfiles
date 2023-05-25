@@ -1,0 +1,9 @@
+# Set scrollback buffer size to 0 (no history)
+scrolling:
+  history: 0
+
+# Set window dimensions
+window:
+  dimensions:
+    columns: 80
+    lines: 1

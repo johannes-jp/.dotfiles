@@ -1,0 +1,81 @@
+#dofile('~/.config/conky/colors.conf')
+
+conky.config = {
+    alignment = 'middle_middle',
+    background = true,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = '#ecdbd6',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=12,Font Awesome 5 Free:style=Solid:size=12',
+    gap_x = 5,
+    gap_y = 5,
+    minimum_height = 5,
+    minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'tray',
+    own_window_type = 'normal',
+    own_window_colour = '0d1833',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    stippled_borders = 0,
+    update_interval = 0.5,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false
+}
+
+
+
+conky.text = [[
+
+# Clock
+${font DejaVu Sans Mono:size=30}${time %H:%M}${font}
+# Clock
+
+
+# Media Controls
+${font FontAwesome:size=20}    ${font}
+#${button1 ${execi 1 playerctl play-pause}}${font FontAwesome:size=12}${font}
+#${button1}${execi 1 playerctl play-pause}${font FontAwesome:size=12}${font}
+
+#${button1 ${if_match "${exec cat ~/.conky_buttons}"=="Play/Pause"}${exec ~/.play_pause.sh}}}
+
+
+#${if_running playerctld}
+#${execi 1 playerctl next}${font FontAwesome}${font}
+
+#${if_running playerctld}
+#${font FontAwesome}${execi 1 playerctl previous}${font}
+
+# Media Controls
+
+# Media Info
+${execi 1 playerctl metadata --format "{{ title }}"}
+${execi 1 playerctl metadata --format "{{ artist }}"}
+# Media Info
+
+# Terminal Bar (for quickadd, etc)
+
+# Terminal Bar
+
+# 
+# Spotify: ${execi 1 playerctl metadata --format "{{ title }} - {{ artist }}"}}
+# Signal: ${texeci 60 signal-cli --config ~/.config/signal-cli receive}
+# Clock: ${time %H:%M}
+# 
+
+]]

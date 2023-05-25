@@ -1,0 +1,2 @@
+syntax "i3" "\.(i3|i3config|config)$"
+color-link default "simple"

@@ -1,17 +1,19 @@
 # linux configuration
-dot files, install scripts, and other turnkey tools
+dot files, install scripts, and other turnkey tools 
 
 ## files
 - dot files
 - wallpapers
-- apt list
-- apt list (manual)
+- apt list /etc/apt/sources.list
+- apt list (manual) /etc/apt/sources.list.d
+	- Sources/apt-sources requires `sudo stow -t / -d ~/.dotfiles/Sources apt-sources` or manual copying (safer)
 - pip list
 - sources.list
 - sources.list.d
 
 ## scripts
 - install applications
+- consolidate sources
 - consolidate history
 - push files
 

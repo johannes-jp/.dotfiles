@@ -1,0 +1,9 @@
+[safe]
+	directory = /home/johannes/shared/My Vault
+	directory = /media/sf_Obsidian/My Vault
+[user]
+	name = johannes-jp
+	email = 65911975+johannes-jp@users.noreply.github.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
