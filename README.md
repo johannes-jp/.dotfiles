@@ -1,4 +1,4 @@
-# linux-config
+# linux configuration
 dot files, install scripts, and other turnkey tools
 
 ## files
