@@ -1,5 +1,7 @@
 # linux configuration
-dot files, install scripts, and other turnkey tools 
+- dot files, install scripts, and other turnkey tools 
+- by convention lowercase directories can be stowed
+	- such directories outside of the base directory may require special attention to stow properly
 
 ## files
 - dot files
@@ -14,6 +16,7 @@ dot files, install scripts, and other turnkey tools
 ## scripts
 - install applications
 - consolidate sources
+	- fix installer-status.gz access
 - consolidate history
 - push files
 

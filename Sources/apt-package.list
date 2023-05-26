@@ -264,6 +264,7 @@ printer-driver-ptouch
 printer-driver-pxljr
 printer-driver-sag-gdi
 printer-driver-splix
+pulseaudio
 python3
 python3-pip
 python3-setuptools
