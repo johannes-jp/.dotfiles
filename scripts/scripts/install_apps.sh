@@ -82,16 +82,6 @@ sudo apt install -y brave-browser
 # Install Fastmail
 # create shortcut & open as window from browser, or just use tbird
 
-# Install Regolith
-# wget -qO - https://regolith-desktop.org/regolith.key | \
-# gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
-# echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
-# https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | \
-# sudo tee /etc/apt/sources.list.d/regolith.list
-# curl -sSf https://regolith-desktop.com/install-release-ubuntu-22.04-amd64.txt | bash -s -- -y
-# sudo apt update
-# sudo apt install regolith-desktop regolith-compositor-picom-glx
-
 # Install VS Code
 # sudo snap install code
 
@@ -129,3 +119,5 @@ meson --buildtype=release . build
 ninja -C build
 sudo ninja -C build install
 
+# Install htop
+sudo apt install htop

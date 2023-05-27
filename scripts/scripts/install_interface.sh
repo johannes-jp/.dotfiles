@@ -25,7 +25,6 @@ sudo apt install dunst
 # config files needed
 # ~/.config/i3/config
     # scripts for workspace wallpapers
-    # feh, 
+    # feh,wpg
 # ~/.Xresources
 # ~/.config/picom/picom.conf
-# ~/.config/polybar/config
