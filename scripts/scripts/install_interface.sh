@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #### i3 related
 pip3 install --user i3ipc # more powerful window control
 ####

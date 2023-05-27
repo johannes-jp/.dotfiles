@@ -1,5 +1,4 @@
-# Modify file to run as executable
-# chmod +x install_apps.sh
+#!/bin/bash
 
 # Install pip and core languages
 sudo apt update && sudo apt install -y python3 python3-pip nodejs npm

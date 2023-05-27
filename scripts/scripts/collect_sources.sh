@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #file locations
 write_directory="$HOME/.dotfiles/Sources/"
 pip="pip-package.list"
