@@ -20,20 +20,20 @@ package_exists () {
 
 #### apt ####
 # Check if user has read permission for installer file
-installer_status_file="/var/log/installer/installer-status.gz"
+installer_status_file="/var/log/installer/initial-status.gz"
 # Check if file exists for user
-if ! [ -e "$installer_status_file" ]; then
+#if [ ! -e "$installer_status_file" ]; then
   # Check if file exists for super user 
-  if ! sudo test -e "$installer_status_file"; then
-    echo "File '$installer_status_file' does not exist"
-  else
+#  if ! sudo test -e "$installer_status_file"; then
+#    echo "File '$installer_status_file' does not exist"
+#  else
   # Sudo add read permission
-    if ! sudo test -r "$installer_status_file"; then
-      sudo chmod +r "$installer_status_file"
-      echo "Read permission added for file '$installer_status_file' (with sudo)."
-    fi
-  fi
-fi
+#    if ! sudo test -r "$installer_status_file"; then
+#      sudo chmod +r "$installer_status_file"
+#      echo "Read permission added for file '$installer_status_file' (with sudo)."
+#    fi
+#  fi
+#fi
 # Remove list of installer packages from manual packages
 installer_packages=$(gzip -dc "$installer_status_file" | sed -n 's/^Package: //p' | sort -u)
 comm -23 <(apt-mark showmanual | sort -u) <(echo "$installer_packages") > "$write_directory$aptpkg"
