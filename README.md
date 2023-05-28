@@ -15,9 +15,10 @@
 
 ## scripts
 - install applications
+- install interface components
 - consolidate sources
-	- fix installer-status.gz access
 - consolidate history
+- manage quicknotes
 - push files
 
 ## VM
