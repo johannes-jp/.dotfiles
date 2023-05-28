@@ -20,31 +20,15 @@ package_exists () {
 
 #### apt ####
 ## packages ##
-# read installer packages for exclusion (adds read permission if necessary)
-installer_status_file="/var/log/installer/installer-status.gz"
-# Check if the file exists
-if [ -e "$installer_status_file" ]; then
-  # Attempt to read the file using gzip and redirect stderr to a temporary file
-  if gzip -dc "$installer_status_file" 2> /tmp/error.log; then
-    # The file was read successfully
-    echo "File '$installer_status_file' read successfully."
-  else
-    # The file couldn't be read, display error message
-    echo "Error: Failed to read file '$installer_status_file'."
-    
-    # Prompt the user if they want to run a command with sudo
-    read -p "Do you want to make the file readable using 'sudo chmod +r'? [y/n]: " response
-    if [ "$response" = "y" ]; then
-      # Run the command with sudo
-      sudo chmod +r "$installer_status_file"
-      echo "File permissions updated. You can now try running the script again."
-    else
-      echo "Skipping file permission update."
-    fi
-  fi
+# check if user has read permission for installer file
+if [ -r "/var/log/installer/installer-status.gz" ]; then
+  echo "User has read permission"
 else
-  echo "Error: File '$installer_status_file' does not exist."
+  # Add read permission for the current user using sudo
+  sudo chmod +r "$installer_status_file"
+  echo "Read permission added for file '$installer_status_file' using sudo."
 fi
+
 
 #installer
 installer_packages=$(gzip -dc /var/log/installer/installer-status.gz | sed -n 's/^Package: //p' | sort -u)
