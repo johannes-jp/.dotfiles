@@ -10,14 +10,15 @@
 - apt list (manual) /etc/apt/sources.list.d
 	- Sources/apt-sources requires `sudo stow -t / -d ~/.dotfiles/Sources apt-sources` or manual copying (safer)
 - pip list
-- sources.list
-- sources.list.d
+- snap list
+- other files & documents not related to system config should use the backup_link.sh script to be symlinked (`ln -s`) to a backup folder and have that symlink saved in the file's xattr metadata 
 
 ## scripts
 - install applications
+- install interface components
 - consolidate sources
-	- fix installer-status.gz access
 - consolidate history
+- manage quicknotes
 - push files
 
 ## VM
