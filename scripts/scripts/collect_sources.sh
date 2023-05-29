@@ -8,7 +8,7 @@ aptsrc="apt-source.list"
 aptsrc_manual="apt-source-manual.list"
 snap="snap-package.list"
 node="node-package.list"
-
+apps="apps-package.list"
 
 #### other functions ####
 #check if a package/command exists
@@ -46,13 +46,6 @@ ls /etc/apt/sources.list.d > "$write_directory$aptsrc_manual"
 ####
 
 
-
-
-
-
-
-
-
 #### collect snap packages ####
 snap list | awk 'NR>1 {print }' > "$write_directory$snap"
 ####
@@ -83,3 +76,8 @@ else
 	npm list -g --depth=0 | grep -v /npm@ > "$write_directory$node"
 fi
 ####
+
+
+#### collect list in /apps ####
+#ls -d */ if you only want directories
+ls ~/apps > "$write_directory$apps"

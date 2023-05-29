@@ -1,0 +1,19 @@
+# Windows-like hotkeys
+bind ^S savefile main
+bind ^O insert main
+bind ^F whereis main
+bind ^Z undo main
+bind ^Y redo main
+bind ^C copy main
+bind ^X cut main
+bind ^V paste main
+bind ^A mark main
+bind ^G help main
+bind ^Q exit main
+
+# Hotkeys
+# bind ^L cutline main
+
+# More file types
+# include "~/.config/nano/conky.nanorc"
+
