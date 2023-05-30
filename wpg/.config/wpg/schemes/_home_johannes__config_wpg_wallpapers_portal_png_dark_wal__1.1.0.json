@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/johannes/.config/wpg/wallpapers/portal.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0f0e0d",
+        "foreground": "#d0e0d3",
+        "cursor": "#d0e0d3"
+    },
+    "colors": {
+        "color0": "#0f0e0d",
+        "color1": "#65945D",
+        "color2": "#63A15A",
+        "color3": "#A9C764",
+        "color4": "#609D9F",
+        "color5": "#71B7E0",
+        "color6": "#73CEF0",
+        "color7": "#d0e0d3",
+        "color8": "#919c93",
+        "color9": "#65945D",
+        "color10": "#63A15A",
+        "color11": "#A9C764",
+        "color12": "#609D9F",
+        "color13": "#71B7E0",
+        "color14": "#73CEF0",
+        "color15": "#d0e0d3"
+    }
+}

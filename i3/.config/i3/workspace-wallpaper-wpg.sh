@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Define workspace number and wallpaper paths
-wallpaper_path="$HOME/Pictures/Wallpapers/"
-wallpaper_path2="/usr/share/backgrounds/"
+wallpaper_path="$HOME/.config/wpg/wallpapers"
 declare -A wallpapers
 wallpapers=(
   [1]=clouds.jpg
