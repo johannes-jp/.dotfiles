@@ -13,6 +13,9 @@
 for_window [class=".*"] border pixel 0
 title_align center
 
+# Configure system colors on startup
+exec --no-startup-id ~/.config/i3/workspace-wallpaper-wpg.sh
+
 #for_window [class="tray"] max_width 200 resize none
 #for_window [class="tray"] move position -1 px 0 px 
 
@@ -45,7 +48,7 @@ bindsym $mod+p exec "i3-msg open; mark __placeholder"
 exec_always --no-startup-id pgrep -x conky || conky
 
 # Xpad sticky note
-exec_always --no-startup-id pgrep -x xpad || xpad
+# exec_always --no-startup-id pgrep -x xpad || xpad
 
 # Micro terminal
 #exec_always --no-startup-id sh -c "pgrep -f micro_terminal || (source ~/.bashrc; /home/johannes/.config/alacritty/micro_terminal.sh)"

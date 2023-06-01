@@ -41,7 +41,6 @@ alias {refreshbash,bashrefresh}='source ~/.bashrc'
 function edit_file() {
   local file_path="$1"
   local editor="${2:-micro}"
-
   "$editor" "$file_path"
 }
 

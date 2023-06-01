@@ -28,17 +28,30 @@ fi
 ## (what the container looks like) ##
 #####################################
 
-# Dynamically set window title based on last command
 function settitle() {
+    # Store the current command in the array
     recent_commands=("$BASH_COMMAND" "${recent_commands[@]:0:$((HISTORY_LIMIT - 1))}")
-	window_title=$(printf "%s | " "${recent_commands[@]}" | awk -F'|' '{for(i=NF; i>1; i--) printf "%s | ", $i; print $1}')
-    echo -ne "\033]0;${window_title}\007"
+    # Set the terminal title based on the current command
+    local title
+    local last_command="${recent_commands[0]}"
+    if [[ "$last_command" == *nano* ]] || [[ "$last_command" == *micro* ]] || [[ "$last_command" == *edit* ]]; then
+        title="$last_command"
+    else
+        if [ "$PWD" == "$HOME" ]; then
+            title="home"
+        else
+            title="$PWD"
+        fi
+    fi
+    # Print the terminal title
+    echo -ne "\033]0;$title\007"
 }
 export HISTORY_LIMIT=1
 # Initialize the recent_commands array
 declare -a recent_commands
 # Set the trap
 trap 'settitle' DEBUG
+
 
 # update the values of LINES and COLUMNS ifn when window size changes
 shopt -s checkwinsize
