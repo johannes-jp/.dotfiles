@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
-
+export TERMINAL=alacritty
 
 ########  Connections  ########
 # (where else .bashrc looks)  #
@@ -11,8 +11,9 @@ PATH=$PATH:~/.local/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 # source /home/johannes/src/alacritty/extra/completions/alacritty.bash
+# ENV
 
 ## Files
 # Aliases
@@ -20,6 +21,9 @@ if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases
 fi
 # Functions
 if [ -f ~/.bash_functions ]; then . ~/.bash_functions
+fi
+# Profiles & Environment Variables
+if [ -f ~/.bash_profile ]; then . ~/.bash_profile
 fi
 ## Files /
 ########  Connections  ########
@@ -89,7 +93,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 # Add an "alert" alias for long running commands. Usage: sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 ## Aliases /
 ## Functions (where commands named 'foo()' go)
 # see also .bash_functions
@@ -103,17 +107,18 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 ## Bash history ##
 # avoid duplicates
-HISTCONTROL=ignoredups:erasedups
+# HISTCONTROL=ignoredups:erasedups
 
 # when the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 
-# after each command, append to the history file and reread it
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
 # history length
 HISTSIZE=100000
 HISTFILESIZE=100000
+
+# append each command to a separate shared history file (for testing)
+# HISTFILE_SHARED=$HOME/.bash_history_shared
+# PROMPT_COMMAND='history -a; history -w $HISTFILE_SHARED; $PROMPT_COMMAND'
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -181,9 +186,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 #### Color / ####
@@ -195,3 +200,10 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+# Shell-GPT integration BASH v0.1
+_sgpt_bash() {
+    READLINE_LINE=$(sgpt --shell <<< "$READLINE_LINE")
+    READLINE_POINT=${#READLINE_LINE}
+}
+bind -x '"\C-l": _sgpt_bash'
+# Shell-GPT integration BASH v0.1

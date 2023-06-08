@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -rs 'portal.png' 'portal.png'
+wpg -rsL 'clouds.jpg' 'clouds.jpg'

@@ -14,7 +14,7 @@ for_window [class=".*"] border pixel 0
 title_align center
 
 # Configure system colors on startup
-exec --no-startup-id ~/.config/i3/workspace-wallpaper-wpg.sh
+# exec --no-startup-id ~/.config/i3/workspace-wallpaper-wpg.sh
 
 #for_window [class="tray"] max_width 200 resize none
 #for_window [class="tray"] move position -1 px 0 px 
@@ -32,7 +32,7 @@ for_window [class="^(Chromium|Google-chrome|Firefox)"] focus
 # Move the Alacritty terminal with class "timer" to the top right corner
 # for_window [instance="timer"] move position -1 px 0 px
 
-# Use repo picom and user config
+# Use picom compositor and user config
 exec_always --no-startup-id /usr/local/bin/picom -b --config ~/.config/picom/picom.conf
 
 # Window Gaps
@@ -45,7 +45,7 @@ gaps outer 4
 bindsym $mod+p exec "i3-msg open; mark __placeholder"
 
 # Conky
-exec_always --no-startup-id pgrep -x conky || conky
+# exec_always --no-startup-id pgrep -x conky || conky
 
 # Xpad sticky note
 # exec_always --no-startup-id pgrep -x xpad || xpad
@@ -53,7 +53,7 @@ exec_always --no-startup-id pgrep -x conky || conky
 # Micro terminal
 #exec_always --no-startup-id sh -c "pgrep -f micro_terminal || (source ~/.bashrc; /home/johannes/.config/alacritty/micro_terminal.sh)"
 
-exec i3-msg [class="tray"] resize set 400
+# exec i3-msg [class="tray"] resize set 400
 
 # Rofi launcher maybe duplicate
 #bindsym $mod+d exec rofi -show drun
@@ -88,26 +88,28 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
+# set $refresh_i3status killall -SIGUSR1 i3status
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
-# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-bindcode $mod+40 exec "rofi -modi drun,run,filebrowser -show drun"
+# bindsym $mod+d exec --no-startup-id dmenu_run
+# A more modern dmenu replacement is rofi.
+bindcode $mod+40 exec "rofi -show drun"
+# extended rofi browsing (configure @ .config/rofi/config.rasi)
+bindcode $mod+Shift+40 exec "rofi -show"
+
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -177,11 +179,14 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1; exec --no-startup-id $HOME/.config/i3/workspace-wallpaper-wpg.sh; exec i3-msg [class="tray"] resize set 200
-# exec --no-startup-id $HOME/.config/alacritty/generate_colors.sh
+bindsym $mod+1 workspace number $ws1; exec wpg -s clouds.jpg
+#; exec --no-startup-id $HOME/.config/i3/workspace-wallpaper-wpg.sh
+#; exec i3-msg [class="tray"] resize set 200
+#; exec --no-startup-id $HOME/.config/alacritty/generate_colors.sh
 
-bindsym $mod+2 workspace number $ws2; exec --no-startup-id $HOME/.config/i3/workspace-wallpaper-wpg.sh
-# ; exec --no-startup-id $HOME/.config/alacritty/generate_colors.sh
+bindsym $mod+2 workspace number $ws2; exec wpg -s portal.png
+#; exec --no-startup-id $HOME/.config/i3/workspace-wallpaper-wpg.sh
+# exec --no-startup-id $HOME/.config/alacritty/generate_colors.sh
 
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
@@ -338,9 +343,8 @@ set $notify_cmd "dunstify -a 'i3wm' -u normal"
 
 # Polybar
 # Start polybar
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Compositor
-# Default picom branch
-# exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
-# Yshui picom branch
+# Picom
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf

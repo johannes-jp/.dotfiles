@@ -1,30 +1,25 @@
 # Alacritty colors generated from Xresources
 colors:
   primary:
-    color.background: 	'#0d1833',
-    color.foreground: 	'#ecdbd6',
+    background: '#0f0e0d'
+    foreground: '#d0e0d3'
+
   normal:
-    color.    black:   	'#0d1833',
-    color.    black:   	'#606597',
-    color.    green:    	'#95749B',
-    color.    yellow:   	'#C37C89',
-    color.    blue:     	'#6AA7E2',
-    color.    magenta:  	'#A887B2',
-    color.    cyan:     	'#DBA2A6',
-    color.    white:    	'#ecdbd6',
-    color.    black:   	'#95749B',
-    color.    black:   	'#C37C89',
-    color.    black:   	'#6AA7E2',
-    color.    black:   	'#A887B2',
-    color.    black:   	'#DBA2A6',
-    color.color66: 	'#0d1833',
-    color.    black:   	'#ecdbd6',
+    black:   '#0f0e0d'
+    red:     '#65945D'
+    green:   '#63A15A'
+    yellow:  '#A9C764'
+    blue:    '#609D9F'
+    magenta: '#71B7E0'
+    cyan:    '#73CEF0'
+    white:   '#d0e0d3'
+
   bright:
-    color.    green:    	'#95749B',
-    color.    yellow:   	'#C37C89',
-    color.    blue:     	'#6AA7E2',
-    color.    magenta:  	'#A887B2',
-    color.    cyan:     	'#DBA2A6',
-    color.    white:    	'#ecdbd6',
-    color.    black:    	'#a59995',
-    color.    red:      	'#606597',
+    black:   '#919c93'
+    red:     '#65945D'
+    green:   '#63A15A'
+    yellow:  '#A9C764'
+    blue:    '#609D9F'
+    magenta: '#71B7E0'
+    cyan:    '#73CEF0'
+    white:   '#d0e0d3'
