@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/johannes/.config/wpg/wallpapers/neon_rings.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#04090C",
+        "foreground": "#e2edf2",
+        "cursor": "#e2edf2"
+    },
+    "colors": {
+        "color0": "#04090C",
+        "color1": "#1E1F61",
+        "color2": "#204C54",
+        "color3": "#524741",
+        "color4": "#E8E850",
+        "color5": "#658C8D",
+        "color6": "#BDD4DB",
+        "color7": "#e2edf2",
+        "color8": "#9ea5a9",
+        "color9": "#1E1F61",
+        "color10": "#204C54",
+        "color11": "#524741",
+        "color12": "#E8E850",
+        "color13": "#658C8D",
+        "color14": "#BDD4DB",
+        "color15": "#e2edf2"
+    }
+}

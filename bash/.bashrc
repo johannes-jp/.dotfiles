@@ -1,5 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
+
+#set default Sensible Terminal
 export TERMINAL=alacritty
 
 ########  Connections  ########
@@ -7,7 +9,7 @@ export TERMINAL=alacritty
 ###############################
 
 # Paths
-PATH=$PATH:~/.local/bin
+PATH=$PATH:~/.local/bin:~/.local/share/gem/ruby/3.0.0/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -32,9 +34,16 @@ fi
 ## (what the container looks like) ##
 #####################################
 
+
+#### Title
+# Initialize the recent_commands array
+declare -a recent_commands
+export HISTORY_LIMIT=1
+
 function settitle() {
     # Store the current command in the array
     recent_commands=("$BASH_COMMAND" "${recent_commands[@]:0:$((HISTORY_LIMIT - 1))}")
+    
     # Set the terminal title based on the current command
     local title
     local last_command="${recent_commands[0]}"
@@ -44,17 +53,15 @@ function settitle() {
         if [ "$PWD" == "$HOME" ]; then
             title="home"
         else
-            title="$PWD"
+            title="${PWD/$HOME/\~}"
         fi
     fi
     # Print the terminal title
     echo -ne "\033]0;$title\007"
 }
-export HISTORY_LIMIT=1
-# Initialize the recent_commands array
-declare -a recent_commands
-# Set the trap
-trap 'settitle' DEBUG
+
+# Set PROMPT_COMMAND
+PROMPT_COMMAND=settitle
 
 
 # update the values of LINES and COLUMNS ifn when window size changes
@@ -160,13 +167,13 @@ fi
 
 unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# case "$TERM" in
+# xterm*|rxvt*)
+#     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#     ;;
+# *)
+#     ;;
+# esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
