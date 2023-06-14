@@ -1,7 +1,6 @@
 # linux configuration
 - dot files, install scripts, and other turnkey tools 
-- by convention lowercase directories can be stowed
-	- such directories outside of the base directory may require special attention to stow properly
+- by convention lowercase directories can be stowed, others may need special attention
 
 ## files
 - dot files
