@@ -14,6 +14,7 @@ conkyfile='/home/johannes/.conkyrc'
 alacrittyfile='/home/johannes/.config/alacritty/alacritty.yml'
 bashfile='/home/johannes/.bashrc'
 aliasfile='/home/johannes/.bash_aliases'
+firefoxfile='/home/johannes/.mozilla/firefox/akibdbac.default-nightly/chrome/userChrome.css'
 
 # Config filepaths
 alias xresourcespath='cd "$(dirname $xresourcesfile)"'
@@ -21,6 +22,7 @@ alias i3path='cd "$(dirname $i3file)"'
 alias i3pathtest='cd "$(dirname $i3file)"'
 alias picompath='cd "$(dirname $picomfile)"'
 alias alacrittypath='cd "$(dirname $alacrittyfile)"'
+alias firefoxpath='cd "$(dirname $firefoxfile)"'
 
 # Edit configs
 alias xresourcesedit='edit_file "$xresourcesfile"'
@@ -30,6 +32,7 @@ alias conkyedit='edit_file "$conkyfile"'
 alias bashedit='edit_file "$bashfile"'
 alias aliasedit='edit_file "$aliasfile"'
 alias alacrittyedit='edit_file "$alacrittyfile"'
+alias firefoxedit='edit_file "$firefoxfile"'
 
 # Edit in new Code window
 alias vscode='code -n'

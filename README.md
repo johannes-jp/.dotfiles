@@ -1,6 +1,11 @@
 # linux configuration
 - dot files, install scripts, and other turnkey tools 
-- by convention lowercase directories can be stowed, others may need special attention
+- convention:
+    - lowercase directories can be stowed
+    - uppercase directories store:
+        - manual configurations
+        - stows needing special access
+        - references & imports
 
 ## files
 - dot files

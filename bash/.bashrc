@@ -1,9 +1,9 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
-#set default Sensible Terminal
+#set default i3-sensible-terminal
 export TERMINAL=alacritty
-
+export VIMINIT='source $HOME/.vimrc'
 ########  Connections  ########
 # (where else .bashrc looks)  #
 ###############################
@@ -214,3 +214,5 @@ _sgpt_bash() {
 }
 bind -x '"\C-l": _sgpt_bash'
 # Shell-GPT integration BASH v0.1
+
+ 

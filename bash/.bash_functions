@@ -19,8 +19,8 @@ function ai () {
 
 
 #### Stow ####
-# 'stowthis <file>' moves <file> to the stow directory and creates the symlink
-# Why use this over 'stow --adopt'? Because I can 'stowthis' for files in different directories and they go to the same place.
+# `stowthis <file> <package>` moves <file> to the <package> stow directory and creates the symlink
+# Why use this over 'stow --adopt'? Because I can 'stowthis' for files in different directories and they go to the same package.
 stowthis() {
 	#check argument formatting
 	if [ "$#" -ne 2 ]; then
@@ -29,7 +29,7 @@ stowthis() {
 	fi
 	#name of the file to stow
 	local filename=$1
-	#name of the parent directory it's moving to
+	#name of the parent package it's moving to
 	local parent=$2
 	#check if file exists
 	if [ ! -f "$filename" ]; then
@@ -50,6 +50,19 @@ stowthis() {
 	mv "$filename" ~/.dotfiles/"$parent$relative_dir"/
 	#stow the new file
 	(cd ~/.dotfiles && stow "$parent")
+}
+
+# `stownote <note>` appends a note to the target file for reminders about things that might not be configured for automatic environment setup
+# `stownote` for verbose usage
+stownote() {
+  if [ $# -eq 0 ]
+  then
+    echo "Enter a note to append to .dotfiles/Sources/quick-add.list"
+    read -p ">> " note
+  else
+    note="$*"
+  fi
+  echo "$note" >> ~/.dotfiles/Sources/quick-add.list
 }
 #### Stow ####
 
@@ -179,3 +192,6 @@ function qn {
 # systemctl --user status pulseaudio.service
 # sudo systemctl status alsa-state.service
 ####
+
+
+

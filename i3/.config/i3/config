@@ -20,6 +20,7 @@ font pango:monospace 10
 for_window [class=".*"] title_format "        <span foreground='$color5'><b>%class</b></span> <b>%title</b>"
 # title_format "<b>%title</b>"
 
+
 # Configure system colors on startup
 # exec --no-startup-id ~/.config/i3/workspace-wallpaper-wpg.sh
 
@@ -102,7 +103,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#set default terminal
+set $TERMINAL alacritty
 # start a terminal
+# bindsym $mod+Return exec alacritty
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -159,8 +163,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 # Move focused window to scratchpad
 bindsym $mod+Shift+minus move scratchpad
-# Show scratchpad
-bindsym $mod+minus scratchpad show
+# Show/hide scratchpad
+bindsym $mod+minus scratchpad 
 
 
 # toggle tiling / floating
@@ -193,7 +197,12 @@ bindsym $mod+ctrl+Right workspace next
 bindsym $mod+ctrl+Left workspace prev
 
 # workspace specific themes
+# default wallpaper
+exec_always wpg -s clouds.jpg
+# daemon for responding to window actions
 exec --no-startup-id python3 ~/scripts/i3_desktop_event_listener.py
+# workspace default layouts
+exec --no-startup-id ~/.config/i3/default-layout.sh
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1

@@ -1,4 +1,5 @@
 #!/bin/bash
+#not a symlink
 
 # Define the input and output files
 sequences_file="$HOME/.config/wpg/sequences"

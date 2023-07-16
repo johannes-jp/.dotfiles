@@ -1,4 +1,5 @@
 import i3ipc
+import pprint
 import subprocess
 
 
@@ -17,6 +18,13 @@ def on_workspace_focus(self, e):
             set_theme("neon_rings.jpg")
 
 
+# testing for some sort of 'parent container becomes inactive' function
+# def on_window_focus(i3, event):
+# con = event.container
+# pprint.pprint(vars(con))
+
+
 i3 = i3ipc.Connection()
 i3.on("workspace::focus", on_workspace_focus)
+i3.on("window::focus", on_window_focus)
 i3.main()

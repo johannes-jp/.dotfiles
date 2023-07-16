@@ -2,7 +2,7 @@
 
 # Define input and output files
 xresources_file="$HOME/.Xresources"
-colors_yml_file="$HOME/.config/alacritty/colors.yml"
+colors_yml_file="$HOME/.config/alacritty/alacritty.yml"
 
 # Extract color values
 color_values=()
