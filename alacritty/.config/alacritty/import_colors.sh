@@ -11,9 +11,15 @@ for i in {0..15}; do
 done
 
 # Remove content under 'colors:' tag and replace it with the new color values
-sed -i '/^colors:/,/^[^[:space:]]/!b;//!d' "$colors_yml_file"
+# sed -i '/^colors:/,/^[^[:space:]]/!b;//!d' "$colors_yml_file"
 
-cat << EOF >> "$colors_yml_file"
+# Remove content within colors block and replace it with the new color values
+sed -i '/# colors start/,/# colors end/{//!d}' $colors_yml_file
+
+temp_file=$(mktemp)
+
+cat << EOF >> "$temp_file"
+colors:
   primary:
     background: '${color_values[0]}'
     foreground: '${color_values[7]}'
@@ -39,4 +45,7 @@ cat << EOF >> "$colors_yml_file"
     white:   '${color_values[15]}'
 EOF
 
+sed -i '/# colors start/r '"$temp_file" $colors_yml_file
 echo "Color values have been updated in $colors_yml_file."
+
+rm "$temp_file"

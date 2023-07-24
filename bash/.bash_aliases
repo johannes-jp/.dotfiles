@@ -1,4 +1,5 @@
 alias python='python3'
+alias vim='nvim'
 # lists manually installed apt pkgs, excluding installer pkgs
 alias userapts="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 

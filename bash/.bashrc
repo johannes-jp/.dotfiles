@@ -2,8 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
 #set default i3-sensible-terminal
-export TERMINAL=alacritty
-export VIMINIT='source $HOME/.vimrc'
+export TERMINAL=/usr/bin/alacritty
+export TERM=alacritty
+#export VIMINIT='source $HOME/.vimrc'
 ########  Connections  ########
 # (where else .bashrc looks)  #
 ###############################
@@ -47,7 +48,7 @@ function settitle() {
     # Set the terminal title based on the current command
     local title
     local last_command="${recent_commands[0]}"
-    if [[ "$last_command" == *nano* ]] || [[ "$last_command" == *micro* ]] || [[ "$last_command" == *edit* ]]; then
+    if [[ "$last_command" == *vim* ]] || [[ "$last_command" == *nano* ]] || [[ "$last_command" == *micro* ]] || [[ "$last_command" == *edit* ]]; then
         title="$last_command"
     else
         if [ "$PWD" == "$HOME" ]; then
@@ -215,4 +216,3 @@ _sgpt_bash() {
 bind -x '"\C-l": _sgpt_bash'
 # Shell-GPT integration BASH v0.1
 
- 

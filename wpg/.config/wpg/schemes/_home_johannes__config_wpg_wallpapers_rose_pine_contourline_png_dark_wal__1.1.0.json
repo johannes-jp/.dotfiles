@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/johannes/.config/wpg/wallpapers/rose_pine_contourline.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#303030",
+        "foreground": "#CFCFCF",
+        "cursor": "#CFCFCF"
+    },
+    "colors": {
+        "color0": "#303030",
+        "color1": "#D370A3",
+        "color2": "#6D9E3F",
+        "color3": "#B58858",
+        "color4": "#6095C5",
+        "color5": "#AC7BDE",
+        "color6": "#3BA275",
+        "color7": "#CFCFCF",
+        "color8": "#686868",
+        "color9": "#D370A3",
+        "color10": "#6D9E3F",
+        "color11": "#B58858",
+        "color12": "#6095C5",
+        "color13": "#AC7BDE",
+        "color14": "#3BA275",
+        "color15": "#CFCFCF"
+    }
+}

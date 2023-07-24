@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/johannes/.config/wpg/wallpapers/blockwavemoon.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#12121f",
+        "foreground": "#c0bfca",
+        "cursor": "#c0bfca"
+    },
+    "colors": {
+        "color0": "#12121f",
+        "color1": "#675E6D",
+        "color2": "#966167",
+        "color3": "#36708E",
+        "color4": "#727088",
+        "color5": "#A67594",
+        "color6": "#9D9781",
+        "color7": "#c0bfca",
+        "color8": "#86858d",
+        "color9": "#675E6D",
+        "color10": "#966167",
+        "color11": "#36708E",
+        "color12": "#727088",
+        "color13": "#A67594",
+        "color14": "#9D9781",
+        "color15": "#c0bfca"
+    }
+}
