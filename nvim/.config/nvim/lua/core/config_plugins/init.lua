@@ -1,4 +1,4 @@
-require("core.config_plugins.colors")
+require("core.config_plugins.rose-pine")
 require("core.config_plugins.fugitive")
 require("core.config_plugins.harpoon")
 require("core.config_plugins.lsp")
