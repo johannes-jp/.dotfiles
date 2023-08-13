@@ -2,8 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
 #set default i3-sensible-terminal
-export TERMINAL=/usr/bin/alacritty
-export TERM=alacritty
+#export TERMINAL=/usr/bin/alacritty
+#export TERM=alacritty
 #export VIMINIT='source $HOME/.vimrc'
 ########  Connections  ########
 # (where else .bashrc looks)  #
@@ -16,25 +16,27 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # . "$HOME/.cargo/env"
 # source /home/johannes/src/alacritty/extra/completions/alacritty.bash
-# ENV
 
-## Files
-# Aliases
-if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases
-fi
-# Functions
-if [ -f ~/.bash_functions ]; then . ~/.bash_functions
-fi
-# Profiles & Environment Variables
-if [ -f ~/.bash_profile ]; then . ~/.bash_profile
-fi
-## Files /
+## Sources [
+# Aliases, Functions, Profiles & Environment Variables
+if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases; fi
+if [ -f ~/.bash_functions ]; then . ~/.bash_functions; fi
+if [ -f ~/.env ]; then . ~/.env; fi
+## Sources ]
+
+# Shell-GPT integration [
+_sgpt_bash() {
+    READLINE_LINE=$(sgpt --shell <<< "$READLINE_LINE")
+    READLINE_POINT=${#READLINE_LINE}
+}
+bind -x '"\C-l": _sgpt_bash'
+# Shell-GPT integration ]
+
 ########  Connections  ########
 
 #############  Window  ##############
 ## (what the container looks like) ##
 #####################################
-
 
 #### Title
 # Initialize the recent_commands array
@@ -208,11 +210,4 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-# Shell-GPT integration BASH v0.1
-_sgpt_bash() {
-    READLINE_LINE=$(sgpt --shell <<< "$READLINE_LINE")
-    READLINE_POINT=${#READLINE_LINE}
-}
-bind -x '"\C-l": _sgpt_bash'
-# Shell-GPT integration BASH v0.1
 

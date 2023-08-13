@@ -4,6 +4,7 @@
 
 /* My Customizations */
 @import url(chrome/hide_tabs_toolbar.css);
+/*@import url(chrome/compact_urlbar_megabar.css);*/
 @import url(chrome/navigation_buttons_inside_urlbar.css);
 
 /* Default Customizations */

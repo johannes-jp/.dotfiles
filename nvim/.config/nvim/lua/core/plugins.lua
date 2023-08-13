@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
+    "Vigemus/iron.nvim",
+    "christoomey/vim-tmux-navigator",
 	"theprimeagen/harpoon",
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
