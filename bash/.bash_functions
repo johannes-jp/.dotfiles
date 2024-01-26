@@ -189,6 +189,7 @@ function qn {
 
 #### Restart audio drivers and show status of services
 # pulseaudio -k && sudo alsa force-reload
+# alsactl kill rescan
 # systemctl --user status pulseaudio.service
 # sudo systemctl status alsa-state.service
 ####

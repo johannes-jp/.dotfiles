@@ -3,6 +3,7 @@
 
 
 #### Startup
+exec --no-startup-id "VBoxClient-all"
 # authentication prompts
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 # persistent environment variables 
@@ -17,7 +18,7 @@ exec_always --no-startup-id xmodmap -e "keycode 94 = BackSpace"
 
 #### Status Bar
 # Polybar
-exec_always --no-startup-id pkill polybar && polybar
+exec_always --no-startup-id "pgrep polybar && pkill polybar && polybar || polybar"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -38,8 +39,9 @@ exec --no-startup-id ~/.config/i3/default-layout.sh
 
 #### Title & Borders
 #window borders
-default_border none
-# for_window [class=".*"] border pixel 0
+#default_border none
+for_window [class=".*"] border pixel 1 
+for_window [floating] border none 
 title_align center
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -58,8 +60,8 @@ gaps outer 0
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # Move focused window to scratchpad
-bindsym $mod+Shift+minus exec --no-startup-id xdotool getactivewindow set_window --class Scratchpad, move scratchpad 
-#bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus exec --no-startup-id xdotool getactivewindow set_window --class Scratchpad, move scratchpad # Floating Toggle
+bindsym $mod+Shift+plus floating toggle
 
 
 #### Notifications
@@ -126,19 +128,19 @@ bindcode $mod+Shift+40 exec "rofi -show"
 # change focus
 focus_wrapping no
 bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus right
 # alternatively, you can use the cursor keys:
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+m move left
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+e move up
+bindsym $mod+Shift+i move right
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -152,8 +154,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout tabbed
+bindsym $mod+g layout toggle split
 
 # Show/hide scratchpad
 bindsym $mod+minus scratchpad show 
@@ -279,7 +281,7 @@ set_from_resource $color15 i3wm.color15
 # client.urgent           $color0 $color8 $color7 $color8
 
 
-client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused          #4c7899 #cccccc #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000

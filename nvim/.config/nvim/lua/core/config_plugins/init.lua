@@ -1,4 +1,5 @@
 require("core.config_plugins.chatgpt")
+require("core.config_plugins.comment")
 require("core.config_plugins.fugitive")
 require("core.config_plugins.harpoon")
 require("core.config_plugins.iron")

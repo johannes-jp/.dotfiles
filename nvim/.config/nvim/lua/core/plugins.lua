@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
+    "numToStr/Comment.nvim",
     "Vigemus/iron.nvim",
     "christoomey/vim-tmux-navigator",
 	"theprimeagen/harpoon",
@@ -25,15 +26,7 @@ local plugins = {
         -- or                              , branch = '0.1.x',
 	},
 	{	"nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	{   "jackMort/ChatGPT.nvim",
-        event = "VeryLazy",
-        config = function() require("chatgpt").setup() end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }},
-
+	{   "jackMort/ChatGPT.nvim", dependencies = { "MunifTanjim/nui.nvim", }},
 	{   "VonHeikemen/lsp-zero.nvim",
 		branch = 'v2.x',
 		dependencies = {

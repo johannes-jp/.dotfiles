@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/johannes/.config/wpg/wallpapers/bridge.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0E111B",
+        "foreground": "#c3a696",
+        "cursor": "#c3a696"
+    },
+    "colors": {
+        "color0": "#0E111B",
+        "color1": "#5E4B45",
+        "color2": "#283553",
+        "color3": "#364255",
+        "color4": "#344970",
+        "color5": "#1F335F",
+        "color6": "#283B64",
+        "color7": "#c3a696",
+        "color8": "#887469",
+        "color9": "#5E4B45",
+        "color10": "#283553",
+        "color11": "#364255",
+        "color12": "#344970",
+        "color13": "#1F335F",
+        "color14": "#283B64",
+        "color15": "#c3a696"
+    }
+}

@@ -1,3 +1,4 @@
+
 -- my remaps
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>df", vim.cmd.Ex)             -- 'directory folder'

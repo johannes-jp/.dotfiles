@@ -1,6 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
+export GIT_EDITOR=/usr/bin/nvim
+
 #set default i3-sensible-terminal
 #export TERMINAL=/usr/bin/alacritty
 #export TERM=alacritty
@@ -210,4 +212,23 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
+#### CONDA ####
+#export PATH="$HOME/miniconda/bin:$PATH"  # commented out by conda initialize
+export PATH="/opt/conda/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/johannes/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/johannes/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/johannes/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/johannes/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
